@@ -49,6 +49,7 @@ class Tabla:
 
     def renderizar(self):
         self.textbox.configure(state = "normal")
+        self.limpiar()
         if len(self.usuarios) == 0:
             self.agregarLinea(self.centrarLinea("No hay usuarios agregados."))
             self.agregarLinea(self.centrarLinea("Intente agregando un usuario en el formulario izquierdo."))
@@ -71,3 +72,7 @@ class Tabla:
             )
 
         self.textbox.configure(state = "disabled")
+
+    def limpiar(self):
+        cantidadLineas = len(self.usuarios) * 2
+        self.textbox.delete("0.0", str(cantidadLineas) + "." + str(ANCHO_CARACTERES_TABLA))

@@ -1,9 +1,10 @@
 import customtkinter
 import tkinter
 
-FUENTE_ESTANDAR = ("Roboto", 12)
-FUENTE_PEQUENA = ("Roboto", 10)
-FUENTE_GRANDE = ("Roboto", 14)
+FUENTE_ESTANDAR = ("Roboto", 16)
+FUENTE_PEQUENA = ("Roboto", 12)
+FUENTE_GRANDE = ("Roboto", 18)
+FUENTE_MONOESPACIO = ("Consolas", 15)
 
 SEPARACION_DISTANCIA_X = 7
 SEPARACION_DISTANCIA_Y = 26
@@ -13,11 +14,20 @@ ALTURA_CAJA_ENTRADA = 20
 
 SEPARACION_ENTRE_CAJAS = 70
 
-def nuevaEntrada(master, titulo = "", distanciaX = 0, distanciaY = 0, separacionDistanciaX = SEPARACION_DISTANCIA_X, separacionDistanciaY = SEPARACION_DISTANCIA_Y, anchor = tkinter.CENTER, placeholder = ""):
+def nuevaEntrada(
+    master,
+    titulo = "",
+    distanciaX = 0,
+    distanciaY = 0,
+    separacionDistanciaX = SEPARACION_DISTANCIA_X,
+    separacionDistanciaY = SEPARACION_DISTANCIA_Y,
+    anchor = tkinter.CENTER,
+    placeholder = ""
+):
     label = customtkinter.CTkLabel(
         master = master,
         text = titulo,
-        text_font = FUENTE_PEQUENA,
+        font = FUENTE_PEQUENA,
         anchor = tkinter.W
     )
     label.place(x=distanciaX,y=distanciaY)
@@ -29,8 +39,8 @@ def nuevaEntrada(master, titulo = "", distanciaX = 0, distanciaY = 0, separacion
         master = master,
         border_width = 0,
         width = LARGO_LINEA_ENTRADAS,
-        text_font = FUENTE_PEQUENA,
-        fg_color = None,
+        font = FUENTE_PEQUENA,
+        fg_color = "transparent",
         placeholder_text = placeholder
     )
     entry.place(x = posicionXCaja, y = posicionYCaja, anchor = anchor)
